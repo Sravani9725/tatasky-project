@@ -1,0 +1,12 @@
+
+{	java:S117("QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡¯«²HRMINORZ
+CODE_SMELL
+
+java:S1488M"\Immediately return this expression instead of assigning it to the temporary variable "pack".(§ÄÏ×8ÃÔŞª/HqRMINORZ
+CODE_SMELL
+
+java:S1488V"\Immediately return this expression instead of assigning it to the temporary variable "pack".(©êº˜8‘œãª/HRMINORZ
+CODE_SMELL
+“
+java:S1488C"\Immediately return this expression instead of assigning it to the temporary variable "pack".(‡®øşÿÿÿÿ8±å·ª/HWRMINORZ
+CODE_SMELL

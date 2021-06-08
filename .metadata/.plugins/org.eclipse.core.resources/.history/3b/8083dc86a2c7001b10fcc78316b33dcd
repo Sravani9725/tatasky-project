@@ -1,0 +1,35 @@
+package com.cg.pack.service;
+
+import java.util.List;
+
+import com.cg.pack.entities.Pack;
+import com.cg.pack.exception.InvalidInputFormatException;
+import com.cg.pack.exception.PackNotFoundException;
+
+public interface IPackservice {
+
+	Pack addPack(Pack pack) throws PackNotFoundException,InvalidInputFormatException;
+
+	Pack updatePack(Pack pack) throws PackNotFoundException,InvalidInputFormatException;
+	
+	Pack findPackById(Long packId) throws PackNotFoundException,InvalidInputFormatException;
+	
+	Pack findPackByName(String packName) throws PackNotFoundException,InvalidInputFormatException;
+	
+	List<Pack> findByAmountGreaterThan(double amount) throws PackNotFoundException;
+	
+	List<Pack> findByCostOrderByCostAsc(double packCost) throws PackNotFoundException;
+	
+	List<Pack> findPacksInAscendingOrderByDaysValidity()throws PackNotFoundException,InvalidInputFormatException;
+	
+	List<Pack> popularPacks()throws PackNotFoundException,InvalidInputFormatException;
+	
+	void deleteByPackId(Long packId) throws PackNotFoundException;
+	
+	
+	
+	
+	
+	
+	
+}

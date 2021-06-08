@@ -1,0 +1,127 @@
+package com.cg.pack.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cg.pack.entities.Pack;
+import com.cg.pack.exception.PackNotFoundException;
+import com.cg.pack.repository.IPackRepository;
+
+@Service
+public class PackserviceImpl implements IPackservice {
+	
+	Logger logger = LoggerFactory.getLogger(PackserviceImpl.class);
+	
+	@Autowired
+	public IPackRepository repository;
+	
+	
+	
+	@Override
+	public Pack addPack(Pack pack)
+	{
+		logger.info("Inside add pack ");
+		return repository.save(pack);
+		
+	}
+
+
+
+	@Override
+	public Pack updatePack(Pack pack) {
+		
+		logger.info("Inside Update pack ");
+		return repository.save(pack);
+	}
+
+
+
+	@Override
+	public Pack findPackById(Long PackId) throws PackNotFoundException {
+		
+		logger.info("Inside FindPackById ");
+          
+		Optional<Pack> pack = repository.findById(PackId);
+		
+		if(pack.isPresent())
+		{
+			return pack.get();
+		}
+		else
+		{
+			throw new PackNotFoundException();
+		}
+	}
+
+
+
+	@Override
+	public List<Pack> findPacksGreaterThanAmount(double amount) throws PackNotFoundException {
+		
+		logger.info("Inside FindPacksGreaterThanTheAmount ");
+		
+		List<Pack> pack = repository.findByGreaterThanAmount(amount);
+		return pack;
+		
+		
+		
+	}
+
+	@Override
+	public List<Pack> findPacksInAscendingOrderByCost(double amount) {
+		
+		logger.info("Inside add pack ");
+		
+		List<Pack> pack = repository.findPacksInAscendingOrderByCost(amount);
+		return pack;
+	}
+
+
+
+	@Override
+	public List<Pack> findPacksInAscendingOrderByDaysValidity() {
+		
+		logger.info("Inside add pack ");
+		
+		List<Pack> pack = repository.findPacksInAscendingOrderByDaysValidity();
+		return pack;
+	}
+
+
+
+	@Override
+	public List<Pack> popularPacks() {
+		
+		logger.info("Inside add pack ");
+		List<Pack> pack = repository.findRechargesCountInDescendingOrder();
+		return null;
+	}
+
+
+
+	@Override
+	public void deleteByPackId(Long packId) throws PackNotFoundException{
+		
+		Optional<Pack> pack = repository.findById(packId);
+		
+		if(pack.isPresent())
+		{
+			repository.findById(packId);
+		}
+		else
+		{
+			throw new PackNotFoundException();
+		}
+	}
+	
+	
+	
+
+	
+	
+}

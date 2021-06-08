@@ -1,0 +1,34 @@
+package com.cg.pack.service;
+
+import java.util.List;
+
+import com.cg.pack.entities.Pack;
+import com.cg.pack.exception.PackNotFoundException;
+
+public interface IPackservice {
+
+	Pack addPack(Pack pack);
+
+	Pack updatePack(Pack pack);
+	
+	Pack findPackById(Long PackId) throws PackNotFoundException;
+	
+	List<Pack> findPacksGreaterThanAmount(double amount);
+	
+	List<Pack> findPacksInAscendingOrder(double amount);
+	
+	List<Pack> findPacksInAscendingOrderByCost(double amount);
+	
+	List<Pack> findPacksInAscendingOrderByDaysValidity();
+	
+	List<Pack> popularPacks();
+	
+	void deleteByPackId(Long packId) throws PackNotFoundException;
+	
+	
+	
+	
+	
+	
+	
+}

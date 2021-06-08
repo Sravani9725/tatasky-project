@@ -1,0 +1,12 @@
+package com.cg.pack.repository;
+
+
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.cg.pack.entities.Pack;
+
+public interface IPackRepository extends JpaRepository<Pack,Integer>{
+
+	
+}

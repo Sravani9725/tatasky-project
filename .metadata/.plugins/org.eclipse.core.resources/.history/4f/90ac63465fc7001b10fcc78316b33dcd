@@ -1,0 +1,66 @@
+package com.cg.pack.entities;
+
+import java.util.List;
+
+public class Pack {
+
+	private long packId;
+	private String packName;
+	private String packValidity;
+	private double packCost;
+	private String packDescription;
+	private List<String> channels;
+
+	public Pack() {
+		super();
+	}
+
+	public long getPackId() {
+		return packId;
+	}
+
+	public void setPackId(long packId) {
+		this.packId = packId;
+	}
+
+	public String getPackName() {
+		return packName;
+	}
+
+	public void setPackName(String packName) {
+		this.packName = packName;
+	}
+
+	public String getPackValidity() {
+		return packValidity;
+	}
+
+	public void setPackValidity(String packValidity) {
+		this.packValidity = packValidity;
+	}
+
+	public double getPackCost() {
+		return packCost;
+	}
+
+	public void setPackCost(double packCost) {
+		this.packCost = packCost;
+	}
+
+	public String getPackDescription() {
+		return packDescription;
+	}
+
+	public void setPackDescription(String packDescription) {
+		this.packDescription = packDescription;
+	}
+
+	public List<String> getChannels() {
+		return channels;
+	}
+
+	public void setChannels(List<String> channels) {
+		this.channels = channels;
+	}
+
+}

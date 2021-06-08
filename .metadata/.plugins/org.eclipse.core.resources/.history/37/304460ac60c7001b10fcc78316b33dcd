@@ -1,0 +1,20 @@
+package com.cg.pack.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.cg.pack.entities.Pack;
+
+public interface IPackRepository {
+
+	Pack save(Pack pack);
+
+	void deleteById(Long packId);
+
+	Optional <Pack> findById(Long packId);
+
+	List<Pack> findByGreaterThanAmount(double amount);
+
+	List<Pack> findPacksInAscendingOrder();
+
+}
