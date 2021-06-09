@@ -1,0 +1,77 @@
+package com.cg.pack.entities;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@Entity
+@Table(name = "sr_table")
+public class ServiceRequest {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	 private Long serviceRequestId;
+	@Column
+	@NotNull
+	 private LocalDate requestedDate;
+	
+	// private Account account;
+	 @Column
+	 @NotNull
+	 private String message;
+	 
+	 
+	  
+		private Long getServiceRequestId() {
+		return serviceRequestId;
+	}
+
+	private void setServiceRequestId(Long serviceRequestId) {
+		this.serviceRequestId = serviceRequestId;
+	}
+
+	private LocalDate getRequestedDate() {
+		return requestedDate;
+	}
+
+	private void setRequestedDate(LocalDate requestedDate) {
+		this.requestedDate = requestedDate;
+	}
+
+	/*private Account getAccount() {
+		return account;
+	}
+
+	private void setAccount(Account account) {
+		this.account = account;
+	}
+
+	private String getMessage() {
+		return message;
+	}
+
+	private void setMessage(String message) {
+		this.message = message;
+	}
+
+	/*	public Boolean isStatusOpened() {
+	 * if(openedServiceRequest == true)
+	        return statusOpened;
+	    }
+
+	    public void setStatusOpened(Boolean statusOpened) {
+	        this.statusOpened = statusOpened;
+	    }
+*/
+}
