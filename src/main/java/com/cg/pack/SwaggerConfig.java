@@ -26,7 +26,7 @@ public class SwaggerConfig {
 
 	private Predicate<String> postPaths() {
 		// TODO Auto-generated method stub
-		return or(regex("/customers/.*"),regex("/user/.*"));
+		return or(regex("/Account/.*"),regex("/user/.*"));
 	}
 
 	private ApiInfo apiInfo() {

@@ -76,12 +76,12 @@ public class AccountController {
 
 	}
 
-	@GetMapping("/countAccounts")
-	@ApiOperation("Counts number of user registered in a peroid of time")
-	public int countCreatedAccountsinPeriod(@PathVariable LocalDate startdate, @PathVariable LocalDate enddate) {
-		logger.info("Counts number of user registered in a peroid of time");
-		return service.countCreatedAccountsInPeriods(startdate, enddate);
-	}
+//	@GetMapping("/countAccounts")
+//	@ApiOperation("Counts number of user registered in a peroid of time")
+//	public int countCreatedAccountsinPeriod(@PathVariable LocalDate startdate, @PathVariable LocalDate enddate) {
+//		logger.info("Counts number of user registered in a peroid of time");
+//		return service.countCreatedAccountsInPeriod(startdate, enddate);
+//	}
 
 	@GetMapping("/getCountOfAccounts")
 	@ApiOperation("Get count of all the Accounts")

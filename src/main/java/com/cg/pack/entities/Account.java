@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -26,29 +25,30 @@ public class Account {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long accountId;
-	@Column(name="user")
-	@NotNull
-	private User user;
+//	@Column(name="user")
+//	@NotNull
+//	private User user;
+//	
+//	@OneToMany(targetEntity = Recharge.class, cascade = CascadeType.ALL)
+//	@JoinColumn(name = "rc_fk", referencedColumnName = "rechargeId")
+//	private List<Recharge> recharges;
 	
-	@OneToMany(targetEntity = Recharge.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "rc_fk", referencedColumnName = "RechargeId")
-	private List<Recharge> recharges;
+//	@Column(name="registeredDate")
+//	@NotNull
+//	private LocalDate registeredDate;
 	
-	@Column(name="registeredDate")
-	@NotNull
-	private LocalDate registeredDate;
+//	@OneToMany(targetEntity = ServiceRequest.class, cascade = CascadeType.ALL)
+//	@JoinColumn(name = "sc_fk", referencedColumnName = "serviceRequestId")
+//	private List<ServiceRequest> requests;
 	
-	@OneToMany(targetEntity = ServiceRequest.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "sc_fk", referencedColumnName = "serviceRequestId")
-	private List<ServiceRequest> requests;
+//	@OneToMany(targetEntity=Pack.class, cascade=CascadeType.ALL)
+//	@JoinColumn(name="pc_fk",referencedColumnName = "packId")
+    @OneToMany(mappedBy = "packId", cascade = CascadeType.ALL)	
+	private List<Pack> currentPacks;
 	
-	@Column(name="currentPack")
-	private Pack currentPack;
+//	@OneToMany(targetEntity=Complaint.class, cascade=CascadeType.ALL)
+//	@JoinColumn(name="cc_fk",referencedColumnName = "complaintId")
+//	private List<Complaint> complaints;
+//	
 	
-	@OneToMany(targetEntity=Complaint.class, cascade=CascadeType.ALL)
-	@JoinColumn(name="cc_fk",referencedColumnName = "complaintId")
-	private List<Complaint> complaint;
-	
-	
-
 }
